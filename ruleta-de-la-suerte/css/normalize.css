@@ -1,0 +1,11 @@
+
+html, body{
+    min-height:100%;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    font-family: cursive;
+    box-sizing: border-box;
+}

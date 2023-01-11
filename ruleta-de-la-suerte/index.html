@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="./js/index.js" defer></script>
+    <title>Estilo</title>
+</head>
+<body>
+    <div class="juego-ruleta">
+        <div class="titulo"> 
+            <h1 class="nombre-titulo">Ruleta de la suerte</h1>
+            <h2 class="tiempo" id="tiempo">05:00</h2>
+        </div>
+        <div class="panel" id="panel">
+            <div class="frase"></div>
+            <div class="pista"></div>
+        </div>
+        <div class="ruleta__container">
+            <div class="vara"></div>
+            <img src="./img/ruleta-suerte.png"  class="item-ruleta" id="ruleta">
+            <div class="botones">
+                <form class="btn__ruleta" id="consonante">
+                    <input type="button" value="Consonante">
+                </form>
+
+                <form class="btn__ruleta" id="vocal">
+                    <input type="button" value="Vocal">
+                </form>
+
+                <form class="btn__ruleta" id="resolver">
+                    <input type="button" value="Resolver">
+                </form>
+                <input type="text" id="respuesta">    
+            </div>
+        </div>
+        <div class="jugadores">
+            <div class="jugador" id="jugador1">
+                <div class="nombre-jugador" id="nombreJugador1">Jugador 1</div>
+                <div class="puntos">0</div>
+            </div>
+            <div class="jugador" id="jugador2">
+                <div class="nombre-jugador" id="nombreJugador2">Jugador 2</div>
+                <div class="puntos">0</div>
+            </div>
+            <div class="jugador" id="jugador3">
+                <div class="nombre-jugador" id="nombreJugador3">Jugador 3</div>
+                <div class="puntos">0</div>
+            </div>
+        </div>
+        <div class="mensaje__juego">
+            <p class="mensaje" id="mensaje">Aqui</p>
+        </div>
+    </div>
+
+    <section class="modal clasificacion">
+        <div class="modal__container">
+            <div class="modal__title">
+                <h1>Clasificación:</h1>
+            </div>
+            <ul class="modal__ranking" id="ranking"></ul>
+            <div class="botones">
+                <form action="./index.html" class="btn__ruleta">
+                    <input type="submit" value="Jugar de nuevo">
+                </form>
+                <form action="./menu.html" class="btn__ruleta">
+                    <input type="submit" value="Menu">
+                </form>
+            </div>
+        </div>
+    </section>
+
+  
+    <audio src="./sounds/good.wav" id="audioBien"></audio>
+    <audio src="./sounds/victoria.wav" id="audioVictoria"></audio>
+    <audio src="./sounds/wrong.wav" id="audioMal"></audio>
+</body>
+</html>

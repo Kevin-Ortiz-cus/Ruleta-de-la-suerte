@@ -1,0 +1,261 @@
+
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/fondo.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.btn{
+    position: relative;
+    display: block;
+    width: 25%;
+    height: 2.5em;
+    margin: 0 auto 0.5em;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: #232323;
+    overflow: hidden;
+}
+  
+.btn input{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 25px;
+    text-transform: uppercase;
+    z-index: 20;
+    transition: .3s ease all;
+    cursor: pointer;
+    font-family: cursive;
+}
+
+.btn::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: calc(100% * 5);
+    background-color: #4f006c;
+    z-index: 10   ;
+    top: -300px;
+    left: 0;
+    border-radius: 0 0 150px 150px;
+    transition: all 0.7s ease;
+}
+
+.btn:hover::after{
+    top: 0;
+}
+
+.btn:last-child{
+    margin-bottom: 0;
+}
+
+.modal__container .btn{
+    position: relative;
+    width: 30%;
+    height: 3em;
+    margin: 0 0.4em;
+    border-radius: 0.3em;
+    font-size: 13px;
+    background-color: #161616;
+    overflow: hidden;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+
+img{
+    width: 10em;
+    animation-name: girar;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    border-radius: 52%;
+}
+
+@keyframes girar {
+    from {transform: rotate(0);}
+    to {transform: rotate(360deg);}
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    background: #111111bd;
+    z-index: 20;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.modal__container{
+    display: grid;
+    place-items: center;
+    grid-auto-columns: 100%;
+    width: 40%;
+    margin: auto;
+    max-width: 600px;
+    max-height: 90%;
+    font-size: 22px;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 0.5em 0.5em;
+}
+
+.modal__title{
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.modal__title h1{
+    margin: 0.2em 0;
+}
+
+.modal__close{
+    position: absolute;
+    right: 20px;
+    top: 40%;
+    border: none;
+    background-color: transparent;
+    color: #000000;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.5s ease;
+}
+
+.modal__close:hover{
+    color: #ff0000;
+}
+
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+#aplicarVolumen{
+    font-size: 16px;
+}
+
+#ranking{
+    list-style-type: decimal;
+}
+
+@media (min-width: 702px) and (max-width: 1023px){
+    
+    .titulo{
+        margin: 0.5em 0;
+        font-size: 65px;
+    }
+    
+    .menu > .btn{
+        width: 30%;
+    }
+
+    .btn input{
+        font-size: 22px;
+    }
+
+    img{
+        width: 9em;
+    }
+
+    .modal__container{
+        font-size: 16px;
+    }
+}
+
+
+@media (min-width: 500px) and (max-width: 701px){
+    
+    .titulo{
+        margin: 0.5em 0;
+        font-size: 50px;
+    }
+    
+    .menu > .btn{
+        width: 35%;
+    }
+
+    .btn input{
+        font-size: 18px;
+    }
+
+    img{
+        width: 7.5em;
+    }
+
+    .modal__container{
+        font-size: 12px;
+    }
+
+    .modal__close{
+        font-size: 15px;
+    }
+
+    #aplicarVolumen{
+        font-size: 12px;
+    }
+}
+
+
+@media (min-width: 250px) and (max-width: 499px){
+    
+    .titulo{
+        margin: 0.5em 0;
+        font-size: 40px;
+    }
+    
+    .menu > .btn{
+        width: 50%;
+    }
+
+    .btn input{
+        font-size: 15px;
+    }
+
+    img{
+        width: 6.4em;
+    }
+
+    .modal__container{
+        font-size: 10px;
+    }
+
+    .modal__close{
+        right: 0px;
+        font-size: 12px;
+    }
+
+    #aplicarVolumen{
+        font-size: 8px;
+    }
+}
