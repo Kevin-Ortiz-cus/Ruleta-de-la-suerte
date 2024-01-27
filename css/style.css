@@ -1,0 +1,552 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/fondo.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.juego-ruleta{
+    display: grid;
+    grid-template: 
+    "titulo titulo titulo titulo" 10%
+    "panel panel ruleta ruleta" 65%
+    "jugadores jugadores jugadores jugadores" 15%
+    "mensaje mensaje mensaje mensaje" 10%/
+     25%    35%     15%     25%;
+    border: 2px solid #8e1ebb2c;
+    width: 90%;
+    font-size: 20px;
+}
+
+.titulo{
+    grid-area: titulo;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 2px solid #8e1ebb2c;
+    color: #ffffff;
+}
+
+.nombre-titulo{
+    margin: 0.4em 0;
+    font-size: 60px;
+}
+
+.tiempo{
+    margin: 0.5em 0;
+    font-size: 50px;
+}
+
+.panel{
+    grid-area: panel;
+    display: grid;
+    grid-template-rows: 85% 15%;
+    grid-template-columns: repeat(auto-fill);
+    border-right: 2px solid #8e1ebb2c;
+}
+
+.frase{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    font-size: 50px;
+}
+
+.pista{
+    width: 100%;
+    border: 1px solid #8e1ebb2c;
+    text-align: center;
+    font-size: 50px;
+}
+
+.palabras{
+    display: flex;
+    align-items: center;
+    margin: 0 0.3em;
+    text-transform: uppercase;
+}
+
+.letras{
+    width: 1.2em;
+    padding: 0.1em 0;
+    border: 1px solid #8e1ebb75;
+    background-color: #ffffff;
+    font-size: 48px;
+}
+
+.letrasVolteadas{
+    animation-name: voltearLetra;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    width: 1.2em;
+    padding: 0.1em 0;
+    border: 1px solid #8e1ebb75;
+    font-size: 48px;
+}
+
+@keyframes voltearLetra{
+    from {background-color: #ffffff;}
+    to {transform: rotateY(360deg); background-color: rgb(172, 29, 254); color: #ffffff;}
+}
+
+.ruleta__container{
+    grid-area: ruleta;
+    display: grid;
+    grid-template-rows: 85% 15%;
+    align-items: center;
+    justify-items: center;
+}
+
+.vara{
+    width: 0px;
+    height: 0px;
+    border-top: 40px solid gray;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    position: absolute;
+    top: 170px;
+}
+
+.item-ruleta{
+    border-radius: 50%;
+    width: 62%;
+    transition: all 5s;
+}
+
+.botones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #8e1ebb75;
+}
+
+.botones .btn__ruleta{
+    position: relative;
+    width: 30%;
+    padding: 0.5em 0;
+    margin: 0 0.4em;
+    border-radius: 0.3em;
+    font-size: 13px;
+    background-color: #161616;
+    overflow: hidden;
+}
+  
+.btn__ruleta input[type="button"]{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin: 0;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: cursive;
+    text-transform: uppercase;
+    z-index: 20;
+    transition: .3s ease all;
+    cursor: pointer;
+}
+
+.btn__ruleta input[type="submit"]{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin: 0;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: cursive;
+    text-transform: uppercase;
+    z-index: 20;
+    transition: .3s ease all;
+    cursor: pointer;
+}
+
+.btn__ruleta::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: calc(100% * 5);
+    background-color: #8400b8;
+    z-index: 10   ;
+    top: -300px;
+    left: 0;
+    border-radius: 0 0 150px 150px;
+    transition: all 1s ease;
+}
+
+.btn__ruleta:hover::after{
+    top: 0;
+}
+
+.botones input{
+    width: 15em;
+    border: 2px solid #000000;
+    margin-left:0.4em ;
+    font-size: 20px;
+    
+}
+
+.jugadores{
+    grid-area: jugadores;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 2px solid #000000;
+    font-size: 35px;
+}
+
+.jugador{
+    border: 1px solid #8e1ebb2c;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre-jugador{
+    border: 1px solid #ffffff;
+    width: 100%;
+    height: 50%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.puntos{
+    border: 1px solid #ffffff;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#jugador1{
+  background-color: rgba(140, 0, 255);  
+}
+
+#jugador2{
+  background-color: #2600584d;  
+}
+
+#jugador3{
+    background-color: #2600584d;  
+}
+
+
+.mensaje__juego{
+    grid-area: mensaje;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    text-align: center;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    background: #111111bd;
+    z-index: 100;
+    transition: opacity 0.5s ease-in-out;
+    
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal__container{
+    display: grid;
+    place-items: center;
+    grid-auto-columns: 100%;
+    width: 40%;
+    margin: auto;
+    max-width: 600px;
+    max-height: 90%;
+    font-size: 22px;
+    background-color: #fff;
+    color: #000000;
+    border-radius: 6px;
+    padding: 0.5em 2.5em;
+}
+
+.modal__title{
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.modal__title h1{
+    margin: 0.2em 0;
+}
+
+.modal__close{
+    position: absolute;
+    right: 0;
+    top: 40%;
+    border: none;
+    background-color: transparent;
+    color: #000000;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.5s ease;
+}
+
+.modal__close:hover{
+    color: #ff0000;
+}
+
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.modal__container .btn__ruleta{
+    width: 30%;
+    margin-top: 15px;
+    font-size: 10px;
+}
+
+#ranking{
+    list-style-type: decimal;
+}
+
+@media (min-width: 1024px) and (max-width: 1400px){
+
+    .nombre-titulo{
+        font-size: 50px;
+    }
+
+    .tiempo{
+        font-size: 40px;
+    }
+
+     .botones input{
+        width: 40%;
+        font-size: 14px;
+    }
+
+    .pista{
+        font-size: 40px;
+    }
+
+    .letras{
+        font-size: 42px;
+    }
+
+    .letrasVolteadas{
+        font-size: 42px;
+    }
+
+    .mensaje{
+        font-size: 35px;
+    }
+   
+    .item-ruleta{
+        width: 80%;
+    }
+}
+
+@media (min-width: 702px) and (max-width: 1023px){
+
+    .nombre-titulo{
+        font-size: 35px;
+    }
+
+    .tiempo{
+        font-size: 25px;
+    }
+
+    .botones .btn__ruleta{
+        width: 28%;
+    }
+
+    .btn__ruleta input[type="button"]{
+        font-size: 9px;
+     }
+
+     .botones input{
+        width: 40%;
+        font-size: 12px;
+    }
+
+    .item-ruleta{
+        width: 80%;
+    }
+
+    .pista{
+        font-size: 30px;
+    }
+
+    .letras{
+        font-size: 30px;
+    }
+
+    .nombre-jugador{
+        font-size: 25px;
+    }
+    
+    .puntos{
+        font-size: 25px;
+    }
+
+    .letrasVolteadas{
+        font-size: 30px;
+    }
+
+    .mensaje{
+        font-size: 30px;
+    }
+   
+}
+
+
+@media (min-width: 500px) and (max-width: 701px){
+    .nombre-titulo{
+        font-size: 27px;
+    }
+
+    .tiempo{
+        font-size: 27px;
+    }
+
+    .botones .btn__ruleta{
+        width: 26%;
+        padding: 0.2em 0;
+        margin: 0 0.2em;
+    }
+
+
+    .btn__ruleta input[type="button"]{
+        font-size: 5px;
+     }
+
+     .botones input{
+        width: 40%;
+        font-size: 12px;
+    }
+
+    .item-ruleta{
+        width: 90%;
+    }
+
+    .pista{
+        font-size: 20px;
+    }
+
+    .letras{
+        font-size: 20px;
+    }
+
+    .nombre-jugador{
+        font-size: 20px;
+    }
+    
+    .puntos{
+        font-size: 20px;
+    }
+
+
+    .letrasVolteadas{
+        font-size: 20px;
+    }
+   
+    .mensaje{
+        font-size: 25px;
+    }
+}
+
+
+@media (min-width: 250px) and (max-width: 499px){
+    .juego-ruleta{
+        display: grid;
+        grid-template: 
+        "titulo titulo titulo titulo" 3em
+        "jugadores jugadores ruleta ruleta" 12em
+        "panel panel panel panel" 15em
+        "mensaje mensaje mensaje mensaje" 3em/
+         25%    25%     30%     20%;
+        border: 2px solid #8e1ebb2c;
+        width: 90%;
+        font-size: 20px;
+    }
+
+    .jugadores{
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        border-top: 2px solid #000000;
+        font-size: 14px;
+        height: 95%;
+    }
+
+    .ruleta__container{
+        grid-area: ruleta;
+        display: grid;
+        grid-template-rows: 70% 30%;
+        align-items: center;
+        justify-items: center;
+    }
+    
+    .item-ruleta{
+        width: 85%;
+    }
+
+    .botones .btn__ruleta{
+        width: 30%;
+        padding: 0.2em 0;
+        margin: 0 0.2em;
+    }
+
+    .btn__ruleta input[type="button"]{
+       font-size: 6px;
+    }
+    
+    input[type="text"]{
+        width: 8em;
+        font-size: 10px;
+    }
+
+    .nombre-titulo{
+        font-size: 30px;
+    }
+
+    .tiempo{
+        font-size: 20px;
+    }
+
+    .pista{
+        font-size: 20px;
+    }
+
+    .letras{
+        font-size: 22px;
+    }
+
+    .letrasVolteadas{
+        font-size: 22px;
+    }
+
+    .mensaje{
+        font-size: 20px;
+    }
+  
+}

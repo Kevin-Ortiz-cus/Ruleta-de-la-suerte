@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <script type="text/javascript" src="js/modal.js" defer></script>
+    <title>Menu</title>
+
+</head>
+<body>
+    <div class="menu">
+        <img src="./img/ruleta-suerte.png" alt="ruleta">
+        <h1 class="titulo">Ruleta de la suerte</h1>
+        
+        <form action="./formulario.html" class="btn">
+            <input type="submit" value="Jugar">
+        </form>
+
+        <form class="btn">
+            <input type="button" value="Clasificación" id="btn-clasificacion">
+        </form>
+
+        <form class="btn">
+            <input type="button" value="Ayuda" id="btn-ayuda">
+        </form>
+
+        <form class="btn">
+            <input type="button" value="Opciones" id="btn-opciones">
+        </form>
+    </div>
+
+    <section class="modal clasificacion">
+        <div class="modal__container" id="contenedor-clasificacion">
+            <div class="modal__title">
+                <h1>Clasificación:</h1>
+                <button class="modal__close">X</button>
+            </div>
+            <p id="texto-clasificacion">No hay clasificaciones disponibles</p>
+            <ul class="modal__ranking" id="ranking"></ul>
+        </div>
+    </section>
+
+    <section class="modal ayuda">
+        <div class="modal__container">
+            <div class="modal__title">
+                <h1>Como jugar:</h1>
+                <button class="modal__close">X</button>
+            </div>
+            <p class="modal__parrafo">El jugador <strong>gira la ruleta</strong>, cuando termine de girar tocará una recompensa aleatoria y el jugador tendrá que elegir una <strong>consonante</strong>, si esta existe se le otorgará la recompensa y volverá a <strong>gira la ruleta</strong>, si no existe pasará el <strong>turno</strong> al siguiente jugador.</p>
+            <p class="modal__parrafo">Dentro del turno de cada jugador se puede comprar una <strong>vocal</strong> por <strong>50 puntos</strong>, pero solo una vez en ese mismo <strong>turno</strong>. Si no existe la <strong>vocal</strong> pasará el <strong>turno</strong> al siguiente jugador.</p>
+            <p class="modal__parrafo">Se puede resolver el panel cuando quieras en tu <strong>turno</strong>. Gana el jugador con más puntos.</p>
+            <button class="modal__close">X</button>
+        </div>
+    </section>
+
+    <section class="modal opciones">
+        <div class="modal__container">
+            <div class="modal__title">
+                <h1>Opciones:</h1>
+                <button class="modal__close">X</button>
+            </div>
+            <form>
+                Sonido <input type="range" min="0" max="10" id="volumenSonido">
+            </form>
+            <form class="btn">
+                <input type="button" value="Aplicar" class="aplicar" id="aplicarVolumen">
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
